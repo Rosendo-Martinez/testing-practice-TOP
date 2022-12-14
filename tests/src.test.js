@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from "../src/src";
+import { capitalize, reverseString, calculator, analyzeArray } from "../src/src";
 
 test("capitalizes the word cat", () => {
     expect(capitalize("cat")).toBe("Cat");
@@ -38,4 +38,13 @@ test("calculator obj can divide", () => {
 
 test("calculator obj can multiply", () => {
     expect(calculator.multiply(7,4)).toBe(28);
+})
+
+test("analyzeArray returns input array statistics", () => {
+    expect(analyzeArray([1,8,3,4,2,6])).toStrictEqual({
+        average: 4,
+        min: 1,
+        max: 8,
+        length: 6
+    })
 })

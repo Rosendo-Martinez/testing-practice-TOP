@@ -1,5 +1,12 @@
+const calculator = {
+    add: (x,y) => x + y, 
+    subtract: (x,y) => x - y, 
+    divide: (x,y) => x / y,
+    multiply: (x,y) => x * y
+};
+
 function capitalize(str) {
-    return str[0].toUpperCase() + str.substring(1);;
+    return str[0].toUpperCase() + str.substring(1);
 }
 
 function reverseString(str) {
@@ -13,11 +20,22 @@ function reverseString(str) {
     return revArray.join('');
 }
 
-const calculator = {
-    add: (x,y) => x + y, 
-    subtract: (x,y) => x - y, 
-    divide: (x,y) => x / y,
-    multiply: (x,y) => x * y
-};
+function analyzeArray(arr) {
+    let sum = arr[0];
+    let min = arr[0];
+    let max = arr[0]; 
+    for (let i = 1; i < arr.length; i++) {
+        sum += arr[i];
+        min = min < arr[i] ? min : arr[i];
+        max = max > arr[i] ? max : arr[i];
+    }
 
-export {capitalize, reverseString, calculator};
+    return {
+        average: sum/arr.length, 
+        min, 
+        max, 
+        length: arr.length
+    };
+}
+
+export {calculator, capitalize, reverseString, analyzeArray};
