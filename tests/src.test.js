@@ -1,4 +1,4 @@
-import { capitalize, reverseString } from "../src/src";
+import { capitalize, reverseString, calculator } from "../src/src";
 
 test("capitalizes the word cat", () => {
     expect(capitalize("cat")).toBe("Cat");
@@ -20,7 +20,22 @@ test("reverse string McDonald to dlanoDcM", () => {
     expect(reverseString("McDonald")).toBe("dlanoDcM");
 })
 
-
 test("reverse string a to a", () => {
     expect(reverseString("a")).toBe("a");
+})
+
+test("calculator obj can add", () => {
+    expect(calculator.add(49,51)).toBe(100);
+})
+
+test("calculator obj can subtract", () => {
+    expect(calculator.subtract(49,51)).toBe(-2);
+})
+
+test("calculator obj can divide", () => {
+    expect(calculator.divide(80,4)).toBe(20);
+})
+
+test("calculator obj can multiply", () => {
+    expect(calculator.multiply(7,4)).toBe(28);
 })
